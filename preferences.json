@@ -1,52 +1,60 @@
 [
     {
         "property": "theme.betterBookmarks.toolbarFolders",
-        "label": "Hide folder icons",
+        "label": "Hide folder icons in toolbar",
         "type": "checkbox",
         "defaultValue": true
     },
     {
         "property": "theme.betterBookmarks.subFolders",
-        "label": "Hide subfolder icons",
+        "label": "Hide nested folder icons",
         "type": "checkbox",
         "defaultValue": true
     },
     {
-        "property": "theme.betterBookmarks.websitesIcon",
+        "property": "theme.betterBookmarks.websiteIcons",
         "label": "Hide website icons",
         "type": "dropdown",
         "defaultValue": "toolbar",
         "options": [
             {
-                "label": "Only in Toolbar",
+                "label": "Toolbar only",
                 "value": "toolbar"
             },
             {
-                "label": "Only in Folders",
+                "label": "Folders only",
                 "value": "folders"
             },
             {
-                "label": "All",
+                "label": "Everywhere",
                 "value": "all"
             }
         ]
     },
     {
-        "property": "theme.betterBookmarks.websitesIconGrayscale",
-        "label": "Grayscale website icons",
+        "property": "theme.betterBookmarks.websiteIconsGrayscale",
+        "label": "Convert website icons to grayscale",
+        "type": "checkbox",
+        "defaultValue": false
+    },
+    {
+        "property": "theme.betterBookmarks.hideExpand",
+        "label": "Hide folder expand arrow (›)",
+        "type": "checkbox",
+        "defaultValue": false
+    },
+    {
+        "property": "theme.betterBookmarks.smoothPopups",
+        "label": "Popup open animation",
         "type": "checkbox",
         "defaultValue": false
     },
     {
         "property": "theme.betterBookmarks.toolbarAlignment",
-        "label": "Bookmarks toolbar alignment",
+        "label": "Toolbar alignment",
         "type": "dropdown",
         "defaultValue": "none",
         "options": [
-            {
-                "label": "Left",
-                "value": "left"
-            },
             {
                 "label": "Center",
                 "value": "center"

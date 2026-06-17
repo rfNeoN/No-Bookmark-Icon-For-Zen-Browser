@@ -1,41 +1,43 @@
+/* --------------------------------------------
+   ICON VISIBILITY
+   -------------------------------------------- */
+
+/* Hide folder icons in toolbar */
 @media (-moz-pref("theme.betterBookmarks.toolbarFolders")) {
-    #personal-bookmarks {
-        & .toolbarbutton-icon[type="menu"] {
-            display: none !important;
-        }
+    #personal-bookmarks .toolbarbutton-icon[type="menu"] {
+        display: none;
     }
 }
 
+/* Hide nested folder icons */
 @media (-moz-pref("theme.betterBookmarks.subFolders")) {
-    #personal-bookmarks {
-        & .menu-icon:not([srcset]) {
-            display: none !important;
-        }
+    #personal-bookmarks .menu-icon:not([srcset]) {
+        display: none;
     }
 }
 
-@media (-moz-pref("theme.betterBookmarks.websitesIcon", "toolbar")) {
+/* Hide website icons */
+@media (-moz-pref("theme.betterBookmarks.websiteIcons", "toolbar")) {
     toolbarbutton.bookmark-item[image^="page-icon"] > image {
-        display: none !important;
+        display: none;
     }
 }
 
-@media (-moz-pref("theme.betterBookmarks.websitesIcon", "folders")) {
+@media (-moz-pref("theme.betterBookmarks.websiteIcons", "folders")),
+       (-moz-pref("theme.betterBookmarks.websiteIcons", "all")) {
     .toolbar-menupopup .menu-iconic .menu-icon[srcset] {
-        display: none !important;
+        display: none;
     }
 }
 
-@media (-moz-pref("theme.betterBookmarks.websitesIcon", "all")) {
-    .toolbar-menupopup .menu-iconic .menu-icon[srcset] {
-        display: none !important;
-    }
+@media (-moz-pref("theme.betterBookmarks.websiteIcons", "all")) {
     toolbarbutton.bookmark-item[image^="page-icon"] > image {
-        display: none !important;
+        display: none;
     }
 }
 
-@media (-moz-pref("theme.betterBookmarks.websitesIconGrayscale")) {
+/* Grayscale website icons */
+@media (-moz-pref("theme.betterBookmarks.websiteIconsGrayscale")) {
     .toolbar-menupopup .menu-iconic .menu-icon[srcset],
     toolbarbutton.bookmark-item[image^="page-icon"] > image {
         filter: grayscale(1);
@@ -43,18 +45,48 @@
     }
 }
 
-@media (-moz-pref("theme.betterBookmarks.toolbarAlignment", "left")) {
-    #PersonalToolbar #PlacesToolbarItems {
-        justify-content: left !important;
+/* --------------------------------------------
+   FOLDER EXPAND ARROW
+   -------------------------------------------- */
+
+@media (-moz-pref("theme.betterBookmarks.hideExpand")) {
+    menupopup > menu::after {
+        display: none !important;
     }
 }
+
+/* --------------------------------------------
+   POPUP ANIMATIONS
+   -------------------------------------------- */
+
+/* Base animation styles */
+.bookmark-item menupopup {
+    transition: 200ms;
+}
+
+/* Scale animation */
+@media (-moz-pref("theme.betterBookmarks.smoothPopups")) {
+    .bookmark-item menupopup {
+        scale: 0.95;
+    }
+    menu[open] > menupopup,
+    toolbarbutton[open] > menupopup {
+        scale: 1;
+    }
+}
+
+/* --------------------------------------------
+   TOOLBAR ALIGNMENT
+   -------------------------------------------- */
+
 @media (-moz-pref("theme.betterBookmarks.toolbarAlignment", "center")) {
     #PersonalToolbar #PlacesToolbarItems {
         justify-content: center !important;
     }
 }
+
 @media (-moz-pref("theme.betterBookmarks.toolbarAlignment", "right")) {
     #PersonalToolbar #PlacesToolbarItems {
-        justify-content: right !important;
+        justify-content: flex-end !important;
     }
 }
