@@ -44,6 +44,12 @@
         "defaultValue": false
     },
     {
+        "property": "theme.betterBookmarks.hideOpenAll",
+        "label": "Hide (open all in tabs) button",
+        "type": "checkbox",
+        "defaultValue": false
+    },
+    {
         "property": "theme.betterBookmarks.smoothPopups",
         "label": "Popup open animation",
         "type": "checkbox",
